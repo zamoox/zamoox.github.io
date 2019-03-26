@@ -6,12 +6,12 @@
     <link href="./style/style.css" rel="stylesheet" type="text/css">
 </head>
 <body>
-    <h1>Hello!</h1>
     <h2>My name is <strong>Maksym Poslovskyi</strong></h2>
-    <div class ="stripe">
-        <button id = 'more'>
-            Show >> 
-        </button>
+    <div id ="stripe">
+        <div class = "projects">
+            <img src="./style/oksi.png" alt="LOVE">
+        </div>
+        <button id = 'more'>Show</button>
     </div>
     <div class = 'particles-container'>
     <div class = 'particle'></div>
@@ -94,9 +94,26 @@
 </div>
 
 <script>
-    var str = document.getElementByClassName([0], 'stripe');
-    more.onclick = function (){
-        this.innerHTML = 'Hide <<';
+    var stripe = document.getElementById('stripe');
+    var rect = document.getElementsByClassName('projects');
+    var height = stripe.style.height;
+    var toggle = false;
+
+    more.onclick = function () {
+        if (toggle === false){
+           this.innerHTML = "Hide<<";
+           stripe.style.height = "90vh";
+           rect[0].style.display = "block";
+           toggle = true;
+        }
+        else {            
+           this.innerHTML = "Show";
+           stripe.style.height = height;
+           rect[0].style.display = "none";
+           toggle = false;
+        }
+        
+
     }
 </script>
 
