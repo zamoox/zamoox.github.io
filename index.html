@@ -9,7 +9,9 @@
     <h2>My name is <strong>Maksym Poslovskyi</strong></h2>
     <div id ="stripe">
         <div class = "projects">
-            <img src="./style/oksi.png" alt="LOVE">
+            <audio id="sound" src="http://www.w3schools.com/html/horse.ogg"></audio>
+            <h1 id="musicSpan" style = "cursor: pointer">ClickMe</h1>
+            <img id = "oksi" src="./style/oksi.png" alt="LOVE">
         </div>
         <button id = 'more'>Show</button>
     </div>
@@ -112,9 +114,14 @@
            rect[0].style.display = "none";
            toggle = false;
         }
-        
-
     }
+
+    var musicSpan = document.getElementById('musicSpan');
+    musicSpan.addEventListener('click', function(){
+        document.getElementById('sound').play()
+        oksi.style.visibility = "visible";
+    });  
+        
 </script>
 
 </body>

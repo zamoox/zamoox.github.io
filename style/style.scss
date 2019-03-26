@@ -59,11 +59,17 @@ h2{
   background: red;
   height: 500px;
   width: 500px;
+  &:hover {
+    background: orange;
+    opacity: 0.8;  
+  }
 }
 
 img {
-  width: 100%;
+  visibility: hidden;
+  width: 100%; 
 }
+
 
 .particles-container {
   position: absolute;
@@ -131,6 +137,9 @@ img {
   position: absolute;
   border-radius: 50%;
   opacity: 0.8;
+  &:hover {
+    
+  }
 }
 
 
