@@ -6,11 +6,28 @@
     <link href="./style/style.css" rel="stylesheet" type="text/css">
 </head>
 <body>
-    <h2>My name is <strong>Maksym Poslovskyi<strong></h2>
+    <h2 class = "a_text">My name is <strong>Maksym Poslovskyi<strong></h2>
     <div id ="stripe">
-        <div class = "projects">
-            <audio id="sound" src="./porn.mp3"></audio>
-            <h1 id="musicSpan" style = "cursor: pointer">ClickMe</h1>
+        <div class = "projects-container">
+            <div class="header-container">
+                <h2 class = "a_text"> My Projects</h2>
+            </div>
+            <div class = "project">
+                <div class = "preview-wrap">
+                    <div class="preview">
+                        <img src = "./images/preview_1.png" alt ="Project preview">
+                    </div>
+                </div>
+                <div class="description-wrap">
+                     <div class= "project-header">
+                        <h1>"tic-tac-toe"</h1>
+                     </div>
+                     <div class= "description">
+                         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Earum animi sunt ipsam qui mollitia non explicabo sapiente fugit beatae, consequuntur placeat, nostrum suscipit pariatur excepturi quae, quaerat autem! Quisquam, fugiat.</p>
+                     </div>                    
+                </div>
+            </div>
+
         </div>
         <button id = 'more'>Show</button>
     </div>
@@ -96,31 +113,25 @@
 
 <script>
     var stripe = document.getElementById('stripe');
-    var rect = document.getElementsByClassName('projects');
+    var rect = document.getElementsByClassName('projects-container');
     var height = stripe.style.height;
     var toggle = false;
 
     more.onclick = function () {
         if (toggle === false){
            this.innerHTML = "Hide<<";
-           stripe.style.height = "90vh";
-           rect[0].style.display = "block";
+           more.style.visibility = "hidden";
+           stripe.style.height = "90vh"; 
+           setTimeout(() => {rect[0].style.display = "flex"; more.style.visibility = "visible";}, 500);
            toggle = true;
         }
         else {            
            this.innerHTML = "Show";
-           stripe.style.height = height;
            rect[0].style.display = "none";
+           stripe.style.height = height;
            toggle = false;
         }
-    }
-
-    var musicSpan = document.getElementById('musicSpan');
-    musicSpan.addEventListener('click', function(){
-        document.getElementById('sound').play()
-        oksi.style.visibility = "visible";
-    });  
-        
+    }     
 </script>
 
 </body>
